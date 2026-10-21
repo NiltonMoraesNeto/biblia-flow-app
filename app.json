@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "BibliaFlow",
+    "slug": "biblia-flow-app",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "platforms": ["ios", "android"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {},
+    "scheme": "bibliaflow"
+  }
+}

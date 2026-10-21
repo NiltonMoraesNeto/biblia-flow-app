@@ -1,0 +1,36 @@
+{
+  "name": "biblia-flow-app",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "dependencies": {
+    "expo": "~58.0.16",
+    "expo-status-bar": "~58.0.3",
+    "react": "19.3.0",
+    "react-native": "0.88.0"
+  },
+  "devDependencies": {
+    "@types/react": "~19.3.0",
+    "eslint": "^10.13.0",
+    "prettier": "^3.6.2",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.46.0"
+  },
+  "scripts": {
+    "start": "expo start",
+    "ios": "expo start --ios",
+    "android": "expo start --android",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "node --test tests/*.test.mjs",
+    "validate:structure": "node scripts/validate-structure.mjs",
+    "check": "npm run validate:structure && npm run typecheck && npm run lint && npm run format:check && npm test",
+    "export:ios": "expo export --platform ios --output-dir dist/ios",
+    "export:android": "expo export --platform android --output-dir dist/android"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=24.3.0 <25"
+  }
+}

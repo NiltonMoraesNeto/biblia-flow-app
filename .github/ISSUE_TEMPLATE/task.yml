@@ -1,0 +1,16 @@
+name: Task rastreável
+description: Vincular trabalho a uma task existente
+title: '[Mx-Txx] '
+body:
+  - type: input
+    id: task
+    attributes:
+      label: ID da task em specs/tasks.json
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Spec, critérios de aceite e evidências esperadas
+    validations:
+      required: true

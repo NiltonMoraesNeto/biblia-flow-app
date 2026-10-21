@@ -1,0 +1,59 @@
+{
+  "requirements": [
+    {
+      "id": "R01",
+      "spec": "specs/features/F01-design-navigation.md",
+      "milestone": "M1"
+    },
+    {
+      "id": "R02",
+      "spec": "specs/features/F02-onboarding.md",
+      "milestone": "M2"
+    },
+    {
+      "id": "R03",
+      "spec": "specs/features/F03-bible.md",
+      "milestone": "M3"
+    },
+    {
+      "id": "R04",
+      "spec": "specs/features/F04-devotionals.md",
+      "milestone": "M4"
+    },
+    {
+      "id": "R05",
+      "spec": "specs/features/F05-journal.md",
+      "milestone": "M5"
+    },
+    {
+      "id": "R06",
+      "spec": "specs/features/F06-favorites-sharing.md",
+      "milestone": "M6"
+    },
+    {
+      "id": "R07",
+      "spec": "specs/features/F07-notifications.md",
+      "milestone": "M7"
+    },
+    {
+      "id": "R08",
+      "spec": "specs/features/F08-widgets.md",
+      "milestone": "M8"
+    },
+    {
+      "id": "R09",
+      "spec": "specs/features/F09-automatic-mode.md",
+      "milestone": "M7"
+    },
+    {
+      "id": "R10",
+      "spec": "specs/features/F10-sync.md",
+      "milestone": "M9"
+    },
+    {
+      "id": "R11",
+      "spec": "specs/features/F11-release.md",
+      "milestone": "M10"
+    }
+  ]
+}

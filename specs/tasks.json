@@ -1,0 +1,498 @@
+{
+  "schemaVersion": 1,
+  "tasks": [
+    {
+      "id": "M0-T01",
+      "milestone": "M0",
+      "title": "Base Expo e qualidade",
+      "status": "done",
+      "owner": "Codex (execução local)",
+      "dependsOn": [],
+      "specs": ["specs/foundation.md"],
+      "acceptance": [
+        "npm ci, check e exportações iOS/Android aprovados com versões registradas."
+      ],
+      "evidence": [
+        {
+          "date": "2026-10-21",
+          "reference": "docs/engineering/validation.md",
+          "result": "passed",
+          "acceptance": "Todos os critérios desta task; validar relatório e manifesto de transferência."
+        }
+      ],
+      "blockedReason": null
+    },
+    {
+      "id": "M0-T02",
+      "milestone": "M0",
+      "title": "Harness, decisões e rastreabilidade",
+      "status": "done",
+      "owner": "Codex (execução local)",
+      "dependsOn": ["M0-T01"],
+      "specs": ["specs/foundation.md"],
+      "acceptance": [
+        "AGENTS, regras, workflows, ADRs, specs e templates presentes; validador aprova links, IDs e grafo."
+      ],
+      "evidence": [
+        {
+          "date": "2026-10-21",
+          "reference": "docs/engineering/validation.md",
+          "result": "passed",
+          "acceptance": "Todos os critérios desta task; validar relatório e manifesto de transferência."
+        }
+      ],
+      "blockedReason": null
+    },
+    {
+      "id": "M0-T03",
+      "milestone": "M0",
+      "title": "Validação da entrega",
+      "status": "done",
+      "owner": "Codex (execução local)",
+      "dependsOn": ["M0-T02"],
+      "specs": ["specs/foundation.md"],
+      "acceptance": [
+        "Relatório lista arquivos e limitações; destino preserva arquivos existentes."
+      ],
+      "evidence": [
+        {
+          "date": "2026-10-21",
+          "reference": "docs/engineering/validation.md",
+          "result": "passed",
+          "acceptance": "Todos os critérios desta task; validar relatório e manifesto de transferência."
+        }
+      ],
+      "blockedReason": null
+    },
+    {
+      "id": "M1-T01",
+      "milestone": "M1",
+      "title": "Tokens, temas e acessibilidade",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M0-T03"],
+      "specs": ["specs/features/F01-design-navigation.md"],
+      "acceptance": [
+        "Tokens sem hex nas telas; tema manual/sistema e contraste ≥4,5:1 no texto normal documentados."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M1-T02",
+      "milestone": "M1",
+      "title": "Expo Router e navegação",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M1-T01"],
+      "specs": ["specs/features/F01-design-navigation.md"],
+      "acceptance": [
+        "Rotas Hoje/Bíblia/Diário/Ajustes e deep link inválido testados; src/app só contém rotas."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M1-T03",
+      "milestone": "M1",
+      "title": "Testes de UI e aprovação visual",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M1-T02"],
+      "specs": ["specs/features/F01-design-navigation.md"],
+      "acceptance": [
+        "Runner de UI instalado; fonte ampliada, safe area e leitores de tela testados, telas aprovadas."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M2-T01",
+      "milestone": "M2",
+      "title": "Confirmar rotina e modo automático",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M1-T03"],
+      "specs": ["specs/features/F02-onboarding.md"],
+      "acceptance": [
+        "Decisão do proprietário registrada sobre 0–5 slots e seleção automática; F02/F07/F09 revisadas."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M2-T02",
+      "milestone": "M2",
+      "title": "Persistir preferências e onboarding",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M2-T01"],
+      "specs": ["specs/features/F02-onboarding.md"],
+      "acceptance": [
+        "Pular/concluir/retomar onboarding preserva preferências após reinício; casos inválidos testados."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M2-T03",
+      "milestone": "M2",
+      "title": "Consentimento e recuperação",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M2-T02"],
+      "specs": ["specs/features/F02-onboarding.md"],
+      "acceptance": [
+        "Aceitar/recusar/revogar permissão têm comportamento testado sem bloquear app."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M3-T01",
+      "milestone": "M3",
+      "title": "Registrar licença por edição e canal",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M2-T03"],
+      "specs": ["specs/features/F03-bible.md"],
+      "acceptance": [
+        "Registro de edição cobre offline, widgets, push e share com evidência; sem licença task fica blocked."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M3-T02",
+      "milestone": "M3",
+      "title": "Catálogo, importação e leitura offline",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M3-T01"],
+      "specs": ["specs/features/F03-bible.md"],
+      "acceptance": [
+        "Importação autorizada valida checksum e transação; capítulo é legível em modo avião."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M3-T03",
+      "milestone": "M3",
+      "title": "Retomada e falhas de corpus",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M3-T02"],
+      "specs": ["specs/features/F03-bible.md"],
+      "acceptance": [
+        "Reinício retoma referência; referência inválida e download interrompido preservam catálogo."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M4-T01",
+      "milestone": "M4",
+      "title": "Pipeline editorial e direitos",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M3-T03"],
+      "specs": ["specs/features/F04-devotionals.md"],
+      "acceptance": [
+        "Cada item tem autoria, revisão, tipo, origem e direitos; amostra editorial revisada."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M4-T02",
+      "milestone": "M4",
+      "title": "Feed e cache de devocionais",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M4-T01"],
+      "specs": ["specs/features/F04-devotionals.md"],
+      "acceptance": [
+        "Versículo/oração/reflexão carregam offline com referência e atribuição."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M4-T03",
+      "milestone": "M4",
+      "title": "Estados vazios e revisão de conteúdo",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M4-T02"],
+      "specs": ["specs/features/F04-devotionals.md"],
+      "acceptance": [
+        "Catálogo vazio e revisão/remoção de item mostram recuperação sem quebrar leitura."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M5-T01",
+      "milestone": "M5",
+      "title": "Decidir storage, proteção e escopo de pregações",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M4-T03"],
+      "specs": ["specs/features/F05-journal.md"],
+      "acceptance": [
+        "ADR de proteção/backup e migração aprovado; escopo/licença de pregações decidido."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M5-T02",
+      "milestone": "M5",
+      "title": "CRUD offline do diário",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M5-T01"],
+      "specs": ["specs/features/F05-journal.md"],
+      "acceptance": [
+        "Criar/editar/excluir nota offline e reiniciar mantém consistência; falha de escrita preserva versão."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M5-T03",
+      "milestone": "M5",
+      "title": "Exportação, exclusão e recuperação",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M5-T02"],
+      "specs": ["specs/features/F05-journal.md"],
+      "acceptance": [
+        "Exportação/exclusão explícitas testadas; nota ausente em logs, widgets e notificações."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M6-T01",
+      "milestone": "M6",
+      "title": "Favoritos idempotentes offline",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M5-T03"],
+      "specs": ["specs/features/F06-favorites-sharing.md"],
+      "acceptance": [
+        "Favoritar duas vezes não duplica; desfavoritar e reiniciar offline persistem resultado."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M6-T02",
+      "milestone": "M6",
+      "title": "Compartilhamento com atribuição",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M6-T01"],
+      "specs": ["specs/features/F06-favorites-sharing.md"],
+      "acceptance": [
+        "Share inclui referência/atribuição e aplica limites por canal; conteúdo restrito bloqueado."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M6-T03",
+      "milestone": "M6",
+      "title": "Itens removidos e cancelamento",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M6-T02"],
+      "specs": ["specs/features/F06-favorites-sharing.md"],
+      "acceptance": [
+        "Cancelamento não altera dados; referência removida tem recuperação testada."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M7-T01",
+      "milestone": "M7",
+      "title": "Agenda configurável e consentimento",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M6-T03"],
+      "specs": [
+        "specs/features/F07-notifications.md",
+        "specs/features/F09-automatic-mode.md"
+      ],
+      "acceptance": [
+        "Editar 0–5 slots únicos, silêncio e categorias reconcilia IDs; recusa/revogação testada."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M7-T02",
+      "milestone": "M7",
+      "title": "Seleção automática e reconciliação",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M7-T01"],
+      "specs": [
+        "specs/features/F07-notifications.md",
+        "specs/features/F09-automatic-mode.md"
+      ],
+      "acceptance": [
+        "Seleção local autorizada determinística evita repetição diária; desligar cancela seleções futuras."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M7-T03",
+      "milestone": "M7",
+      "title": "Validar fuso, DST e aparelhos",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M7-T02"],
+      "specs": [
+        "specs/features/F07-notifications.md",
+        "specs/features/F09-automatic-mode.md"
+      ],
+      "acceptance": [
+        "Fuso/DST, reboot, deep link e agenda sem duplicatas testados em aparelhos iOS/Android com limites descritos."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M8-T01",
+      "milestone": "M8",
+      "title": "Spike e ADR por plataforma",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M7-T03"],
+      "specs": ["specs/features/F08-widgets.md"],
+      "acceptance": [
+        "Build por plataforma e relatório de opções demonstram widget; ADR aprova solução e limitações."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M8-T02",
+      "milestone": "M8",
+      "title": "Snapshots e deep links",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M8-T01"],
+      "specs": ["specs/features/F08-widgets.md"],
+      "acceptance": [
+        "Snapshot revisionado autorizado persiste offline; clique resolve item ou mostra recuperação."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M8-T03",
+      "milestone": "M8",
+      "title": "Validar widgets em builds nativos",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M8-T02"],
+      "specs": ["specs/features/F08-widgets.md"],
+      "acceptance": [
+        "Atualização e estado vazio testados em aparelhos nas duas plataformas; diário não exposto."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M9-T01",
+      "milestone": "M9",
+      "title": "Comparar backend e política de acesso",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M8-T03"],
+      "specs": ["specs/features/F10-sync.md"],
+      "acceptance": [
+        "ADR compara backend, custo e dados; política de acesso/exclusão e conflitos revisada."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M9-T02",
+      "milestone": "M9",
+      "title": "Conta opcional, outbox e conflitos",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M9-T01"],
+      "specs": ["specs/features/F10-sync.md"],
+      "acceptance": [
+        "Sync só com consentimento; outbox idempotente e tombstones convergem sem perder versões."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M9-T03",
+      "milestone": "M9",
+      "title": "Testar isolamento, exclusão e convergência",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M9-T02"],
+      "specs": ["specs/features/F10-sync.md"],
+      "acceptance": [
+        "Dois clientes, troca de conta, offline, falha parcial e tentativa de acesso cruzado passam roteiro."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M10-T01",
+      "milestone": "M10",
+      "title": "E2E, acessibilidade e privacidade",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M9-T03"],
+      "specs": ["specs/features/F11-release.md"],
+      "acceptance": [
+        "E2E dos caminhos críticos iOS/Android e auditoria de acessibilidade/privacidade aprovados.",
+        "Revisar alertas de dependências registrados em docs/engineering/validation.md; corrigir ou justificar com análise antes da release."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M10-T02",
+      "milestone": "M10",
+      "title": "Builds assinados e testes internos",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M10-T01"],
+      "specs": ["specs/features/F11-release.md"],
+      "acceptance": [
+        "Builds assinados instalam e atualizam; TestFlight/Play interno com evidência."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    },
+    {
+      "id": "M10-T03",
+      "milestone": "M10",
+      "title": "Aceite e preparação das lojas",
+      "status": "todo",
+      "owner": null,
+      "dependsOn": ["M10-T02"],
+      "specs": ["specs/features/F11-release.md"],
+      "acceptance": [
+        "Checklist release sem pendências; contas pessoais, licenças e autorização de publicação registradas."
+      ],
+      "evidence": [],
+      "blockedReason": null
+    }
+  ]
+}

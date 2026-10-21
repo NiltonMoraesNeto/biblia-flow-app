@@ -1,0 +1,14 @@
+node_modules/
+.expo/
+dist/
+coverage/
+*.tsbuildinfo
+.env*
+!.env.example
+ios/
+android/
+.DS_Store
+*.keystore
+*.p12
+*.mobileprovision
+.expo-shared/
