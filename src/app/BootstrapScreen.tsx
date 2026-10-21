@@ -1,36 +1,39 @@
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet, Text, useColorScheme } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { AppText } from '../components/AppText';
+import { Surface } from '../components/Surface';
+import { ThemeSelector } from '../components/ThemeSelector';
 import { ptBR } from '../i18n/pt-BR';
-import { spacing, themes } from '../theme/tokens';
+import { layout, spacing } from '../theme/tokens';
+import { useTheme } from '../theme/ThemeProvider';
 
 export default function BootstrapScreen() {
-  const dark = useColorScheme() === 'dark';
-  const theme = themes[dark ? 'dark' : 'light'];
+  const { theme, name } = useTheme();
   return (
     <ScrollView
       contentInsetAdjustmentBehavior="automatic"
       style={{ backgroundColor: theme.background }}
       contentContainerStyle={styles.container}
     >
-      <StatusBar style={dark ? 'light' : 'dark'} />
-      <Text
-        accessibilityRole="header"
-        style={[styles.brand, { color: theme.accent }]}
-      >
-        {ptBR.appName}
-      </Text>
-      <Text
-        accessibilityRole="header"
-        style={[styles.title, { color: theme.text }]}
-      >
-        {ptBR.welcome}
-      </Text>
-      <Text style={[styles.body, { color: theme.text }]}>
-        {ptBR.description}
-      </Text>
-      <Text style={[styles.body, { color: theme.text }]}>
-        {ptBR.foundation}
-      </Text>
+      <StatusBar style={name === 'dark' ? 'light' : 'dark'} />
+      <View style={styles.content}>
+        <AppText variant="brand">{ptBR.appName}</AppText>
+        <AppText variant="title" accessibilityRole="header">
+          {ptBR.welcome}
+        </AppText>
+        <AppText tone="textMuted">{ptBR.description}</AppText>
+        <Surface>
+          <AppText
+            variant="heading"
+            tone="onSurface"
+            accessibilityRole="header"
+          >
+            {ptBR.pause.title}
+          </AppText>
+          <AppText tone="onSurface">{ptBR.pause.description}</AppText>
+        </Surface>
+        <ThemeSelector />
+      </View>
     </ScrollView>
   );
 }
@@ -40,9 +43,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.xl * 2,
+  },
+  content: {
+    width: '100%',
+    maxWidth: layout.contentMaxWidth,
+    alignSelf: 'center',
     gap: spacing.lg,
   },
-  brand: { fontSize: 20, fontWeight: '600' },
-  title: { fontSize: 32, fontWeight: '600', lineHeight: 42 },
-  body: { fontSize: 18, lineHeight: 28 },
 });

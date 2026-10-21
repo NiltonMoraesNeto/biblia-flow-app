@@ -1,7 +1,7 @@
 # Arquitetura inicial
 
 React Native + Expo + TypeScript strict. Base proveniente do template oficial blank-typescript,
-SDK 58; versões exatas resolvidas pelo lockfile. Node 24 LTS para desenvolvimento e CI.
+SDK 57 conforme [ADR-0009](../adr/0009.md); versões exatas resolvidas pelo lockfile. Node 24 LTS para desenvolvimento e CI.
 
 App.tsx → src/app/BootstrapScreen.tsx → theme/i18n. Sem domínio simulado no bootstrap.
 M1-T02 introduz Expo Router; src/app passa a conter somente rotas e layouts.
@@ -22,8 +22,8 @@ de diário; não sobrescrever texto silenciosamente. Supabase é candidato a com
 Widgets recebem apenas snapshot público/devocional autorizado e revisionado. Deep links validam IDs.
 Permissão negada, item removido e ausência de rede têm estados definidos pelas specs.
 
-Fontes verificadas em 21/10/2026: [SDK 58](https://docs.expo.dev/versions/v58.0.0/),
-[SQLite](https://docs.expo.dev/versions/v58.0.0/sdk/sqlite/),
-[notificações](https://docs.expo.dev/versions/v58.0.0/sdk/notifications/),
+Fontes verificadas em 21/10/2026: [SDK 57](https://docs.expo.dev/versions/v57.0.0/),
+[SQLite](https://docs.expo.dev/versions/v57.0.0/sdk/sqlite/),
+[notificações](https://docs.expo.dev/versions/v57.0.0/sdk/notifications/),
 [development builds](https://docs.expo.dev/develop/development-builds/introduction/).
 Consultar novamente APIs e compatibilidade na execução de cada task; não depender de memória do agente.

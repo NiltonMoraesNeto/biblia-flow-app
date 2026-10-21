@@ -1,6 +1,6 @@
 # F01 — Design e navegação
 
-Status: draft
+Status: ready
 
 Milestone: M1
 
@@ -28,3 +28,14 @@ Qualquer funcionalidade não descrita; alterações exigem revisão desta spec e
 ## Questões abertas
 
 Ver ADRs propostos e docs/product/brief.md; decisões de plataforma/licença dependem da milestone correspondente.
+
+## Incremento M1-T01
+
+- Temas: sistema (padrão), claro e escuro; mudança manual prevalece até voltar a sistema.
+- A seleção é mantida durante a sessão sem remontar a árvore; persistência após reinício pertence a M2.
+- Scheme nativo ausente ou unspecified: usar claro. StatusBar acompanha o tema resolvido.
+- AppText centraliza escala de fonte e tipografia; controles têm mínimo de 48 unidades lógicas,
+  texto sem truncamento e quebra de linha. Sem alturas fixas para conteúdo textual.
+- Contraste: texto normal ≥4,5:1; controles/bordas ≥3:1. Ver tabela em docs/design-system/README.md.
+- Acessibilidade nativa, safe areas e navegação exigem os roteiros M1-T02/T03; esta entrega não as comprova.
+- Revisão de escopo realizada em 21/10/2026 com base no pedido de continuidade; não significa aprovação visual.

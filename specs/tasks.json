@@ -68,14 +68,40 @@
       "id": "M1-T01",
       "milestone": "M1",
       "title": "Tokens, temas e acessibilidade",
-      "status": "todo",
-      "owner": null,
+      "status": "done",
+      "owner": "Codex (projeto local)",
       "dependsOn": ["M0-T03"],
       "specs": ["specs/features/F01-design-navigation.md"],
       "acceptance": [
-        "Tokens sem hex nas telas; tema manual/sistema e contraste ≥4,5:1 no texto normal documentados."
+        "Tokens sem hex nas telas; tema manual/sistema e contraste ≥4,5:1 no texto normal documentados.",
+        "Revisão em Expo Go SDK 57 habilitada por dependências alinhadas; check e exports iOS/Android aprovados após migração solicitada pelo proprietário."
       ],
-      "evidence": [],
+      "evidence": [
+        {
+          "date": "2026-10-21",
+          "reference": "docs/engineering/M1-T01-validation.md",
+          "result": "Integração local conferida; check com 11 testes e exportações iOS/Android aprovados com Node 24.12.0. Revisão nativa pendente.",
+          "acceptance": "Tokens, contraste e resolução de tema testados; revisão visual ainda não realizada."
+        },
+        {
+          "date": "2026-10-21",
+          "reference": "docs/engineering/M1-T01-validation.md",
+          "result": "SDK 57.0.31 / React 19.2.3 / RN 0.86.3 instalados; Expo Doctor 21/21 e exports aprovados; revisão em aparelho pendente.",
+          "acceptance": "Migração para SDK 57 solicitada pelo proprietário; decisão em ADR-0009."
+        },
+        {
+          "date": "2026-10-21",
+          "reference": "docs/engineering/M1-T01-validation.md",
+          "result": "Proprietário confirmou no iPhone via Expo Go: abertura da tela inicial, seleção Sistema/Claro/Escuro e rolagem por toque. Modelo/iOS não informados; demais verificações pendentes.",
+          "acceptance": "F01-AC1 parcial: seleção manual e Sistema confirmadas em aparelho; não comprova resposta a alterações no SO ou preservação de estado."
+        },
+        {
+          "date": "2026-10-21",
+          "reference": "docs/engineering/M1-T01-validation.md",
+          "result": "Proprietário confirmou os testes orientados no iPhone e aprovou o incremento: Sistema acompanha aparência do iOS, Claro prevalece com iOS escuro e texto ampliado permite leitura/rolagem sem cortes.",
+          "acceptance": "Aceite M1-T01 concluído com testes automatizados, contraste medido e aprovação do proprietário. VoiceOver, Android e navegação completa seguem em M1-T02/T03; não declarados testados."
+        }
+      ],
       "blockedReason": null
     },
     {

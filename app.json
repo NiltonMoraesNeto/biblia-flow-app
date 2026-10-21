@@ -10,6 +10,7 @@
       "supportsTablet": true
     },
     "android": {},
-    "scheme": "bibliaflow"
+    "scheme": "bibliaflow",
+    "plugins": ["expo-status-bar"]
   }
 }
