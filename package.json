@@ -43,7 +43,10 @@
     "export:ios": "expo export --platform ios --output-dir dist/ios",
     "export:android": "expo export --platform android --output-dir dist/android",
     "test:unit": "node --test tests/*.test.mjs",
-    "test:navigation": "jest --runInBand"
+    "test:navigation": "jest --runInBand",
+    "test:ui": "MAESTRO_CLI_NO_ANALYTICS=1 maestro test --exclude-tags large-text --test-output-dir artifacts/ui .maestro/flows",
+    "test:ui:large-text": "MAESTRO_CLI_NO_ANALYTICS=1 maestro test --include-tags large-text --test-output-dir artifacts/ui .maestro/flows",
+    "test:ui:syntax": "MAESTRO_CLI_NO_ANALYTICS=1 maestro check-syntax .maestro/flows/navigation.yaml && MAESTRO_CLI_NO_ANALYTICS=1 maestro check-syntax .maestro/flows/invalid-links.yaml && MAESTRO_CLI_NO_ANALYTICS=1 maestro check-syntax .maestro/flows/large-text.yaml"
   },
   "private": true,
   "engines": {

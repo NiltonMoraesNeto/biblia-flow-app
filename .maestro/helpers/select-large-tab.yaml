@@ -1,0 +1,18 @@
+appId: ${APP_ID}
+---
+- repeat:
+    times: 8
+    commands:
+      - runFlow:
+          when:
+            notVisible:
+              id: ${TAB_ID}
+          commands:
+            - swipe:
+                from:
+                  id: navigation-tabs-scroll
+                direction: ${DIRECTION}
+- assertVisible:
+    id: ${TAB_ID}
+- tapOn:
+    id: ${TAB_ID}

@@ -108,7 +108,7 @@
       "id": "M1-T02",
       "milestone": "M1",
       "title": "Expo Router e navegação",
-      "status": "review",
+      "status": "done",
       "owner": "Codex (projeto local)",
       "dependsOn": ["M1-T01"],
       "specs": ["specs/features/F01-design-navigation.md"],
@@ -151,6 +151,18 @@
           "reference": "docs/engineering/M1-T02-validation.md",
           "result": "Proprietário confirmou quebra persistente no botão inferior Ajustes. Estratégia substituída por barra horizontal rolável em fonte ampliada e botões de largura intrínseca. Reteste físico pendente.",
           "acceptance": "F01-AC2 em revisão; títulos mantidos, nomes de abas em uma linha sem reduzir a escala."
+        },
+        {
+          "date": "2026-10-22",
+          "reference": "docs/engineering/M1-T02-validation.md",
+          "result": "Novo Mac com HEAD bf0761a igual ao GitHub pessoal, 103 arquivos versionados presentes e árvore inicialmente limpa. npm ci, check com 22 testes, expo install --check e exports Metro iOS/Android aprovados; lockfile preservado. Proprietário confirmou reteste bem-sucedido de Ajustes em uma linha e acesso às quatro abas com fonte máxima, além de uso geral do app no iPhone 14; versão do iOS não informada. Disponibilidade Android não informada.",
+          "acceptance": "Correção da barra em fonte máxima aprovada pelo proprietário. M1-T02 segue review: safe areas iOS/Android e deep links via SO sem evidência física; demais cenários do roteiro pendentes. M1-T03 não iniciada por dependência."
+        },
+        {
+          "date": "2026-10-22",
+          "reference": "docs/engineering/M1-T02-validation.md",
+          "result": "Proprietário autorizou explicitamente: pode concluir a M1-T02. Aceite apoiado nos testes de rotas reais/recuperação, src/app somente com rotas/layouts, check com 22 testes, exports iOS/Android e navegação/tema/fonte máxima aprovados no iPhone 14.",
+          "acceptance": "M1-T02 concluída com aceite explícito do proprietário. Validações físicas ainda não executadas (safe areas, links via SO, offline, leitores de tela e Android) permanecem no roteiro da M1-T03; não consideradas aprovadas. M1/F01 continuam abertas."
         }
       ],
       "blockedReason": null
@@ -159,14 +171,75 @@
       "id": "M1-T03",
       "milestone": "M1",
       "title": "Testes de UI e aprovação visual",
-      "status": "todo",
-      "owner": null,
+      "status": "in_progress",
+      "owner": "Codex (projeto local)",
       "dependsOn": ["M1-T02"],
       "specs": ["specs/features/F01-design-navigation.md"],
       "acceptance": [
         "Runner de UI instalado; fonte ampliada, safe area e leitores de tela testados, telas aprovadas."
       ],
-      "evidence": [],
+      "evidence": [
+        {
+          "date": "2026-10-22",
+          "reference": "docs/engineering/M1-T03-validation.md",
+          "result": "Maestro 2.11.0/OpenJDK 27 instalados. Sintaxe dos três fluxos e helper aprovada; check com 22 testes e exports Metro iOS/Android aprovados após testID nos controles. Nenhum alvo móvel encontrado. Proprietário tem iPhone 14 e poderá usar Android da esposa quando disponível.",
+          "acceptance": "Runner instalado; execução nativa, fonte/safe areas/leitores de tela e aprovação visual em iOS/Android pendentes. M1-T03 in_progress; não confundir sintaxe com teste E2E aprovado."
+        },
+        {
+          "date": "2026-10-22",
+          "reference": "docs/engineering/M1-T03-validation.md",
+          "result": "Proprietário definiu revisão em aparelhos físicos com Expo Go: iPhone 14 e Android da esposa quando disponível, sem simuladores. Fluxo atualizado em ADR-0012; Xcode e emuladores não exigidos. Maestro instalado permanece opcional, sem execução automática iOS neste fluxo.",
+          "acceptance": "Critérios de F01/M1-T03 preservados; aguardar resultados manuais por plataforma de acessibilidade, safe areas, links, offline e aprovação visual. Nenhum novo teste físico declarado aprovado."
+        },
+        {
+          "date": "2026-10-22",
+          "reference": "docs/engineering/M1-T03-validation.md",
+          "result": "Proprietário confirmou as quatro etapas do roteiro inicial no iPhone 14 com Expo Go: navegação nas abas, temas Claro/Escuro, fonte máxima e áreas seguras nas abas, uso com e sem Wi-Fi/dados móveis com bundle carregado. Relato: funcionou tudo; com e sem wifi e 5g; dark e light. Versão do iOS não informada.",
+          "acceptance": "Aceite parcial iOS: navegação/tema manual, fonte máxima, áreas seguras nas abas e offline confirmados. VoiceOver, links via SO/recuperação, revisão completa e Android/TalkBack pendentes; task permanece in_progress."
+        },
+        {
+          "date": "2026-10-22",
+          "reference": "docs/engineering/M1-T03-validation.md",
+          "result": "Proprietário confirmou sucesso do roteiro de VoiceOver no iPhone 14 com Expo Go: percorrer e ativar as quatro abas e opções de tema, conferir nomes e seleção. Relato: deu certo o voiceOver. Versão do iOS e transcrição dos anúncios não informadas.",
+          "acceptance": "F01-AC2 parcial: VoiceOver nas abas/tema aprovado por relato. Recuperação via SO e sua acessibilidade, revisão restante e Android/TalkBack pendentes. M1-T03 permanece in_progress."
+        },
+        {
+          "date": "2026-10-22",
+          "reference": "docs/engineering/M1-T03-validation.md",
+          "result": "No iPhone 14, colar o endereço no navegador virou pesquisa; ao escanear QR para /pagina-inexistente, proprietário confirmou a mensagem Não encontramos esta página no Expo Go.",
+          "acceptance": "F01-AC3 parcial: link inválido entregue pelo SO e mensagem confirmados; retorno para Hoje, links aninhados e revisão da recuperação ainda pendentes. M1-T03 in_progress."
+        },
+        {
+          "date": "2026-10-22",
+          "reference": "docs/engineering/M1-T03-validation.md",
+          "result": "Proprietário confirmou retorno para Hoje pelo botão da recuperação de /pagina-inexistente e sucesso do roteiro de conferir mensagem/botão sem cortes no iPhone 14 com Expo Go.",
+          "acceptance": "F01-AC3 parcial: recuperação de /pagina-inexistente via SO e retorno para Hoje aprovados; caminhos aninhados, VoiceOver na recuperação e Android ainda pendentes. M1-T03 in_progress."
+        },
+        {
+          "date": "2026-10-22",
+          "reference": "docs/engineering/M1-T03-validation.md",
+          "result": "Proprietário confirmou os dois links /biblia/inexistente e /diario/inexistente abertos por QR no iPhone 14 com Expo Go: mensagem Não encontramos esta página e retorno pelo botão Voltar para Hoje funcionaram em ambos.",
+          "acceptance": "F01-AC3 parcial iOS: recuperação dos três caminhos inválidos via SO aprovada. VoiceOver na recuperação, cenários restantes e Android ainda pendentes. M1-T03 permanece in_progress."
+        },
+        {
+          "date": "2026-10-22",
+          "reference": "docs/engineering/M1-T03-validation.md",
+          "result": "Proprietário confirmou VoiceOver na tela de recuperação de link inválido no iPhone 14 com Expo Go: leitura da mensagem e ativação de Voltar para Hoje por toque duplo funcionaram.",
+          "acceptance": "F01-AC2/AC3 parcial iOS: acessibilidade da recuperação aprovada por relato. Android/TalkBack, versão do iOS e revisão de Sistema nesta task pendentes; M1-T03 permanece in_progress."
+        },
+        {
+          "date": "2026-10-22",
+          "reference": "docs/engineering/M1-T03-validation.md",
+          "result": "Proprietário confirmou no iPhone 14 que o app acompanha a mudança de aparência do sistema após selecionar Sistema. Completa a verificação de tema Sistema orientada nesta task.",
+          "acceptance": "F01-AC1 parcial iOS aprovado por relato. Testes orientados no iPhone aprovados até aqui; versões do iOS/Expo Go não informadas. Android/TalkBack e revisão visual Android pendentes; M1-T03 permanece in_progress."
+        },
+        {
+          "date": "2026-10-22",
+          "reference": "docs/engineering/M1-T03-validation.md",
+          "result": "Proprietário informou iOS 26.6.2 no iPhone 14 e solicitou testar Android quando o app estiver mais completo. Android/TalkBack e revisão visual Android adiados por escolha do proprietário, sem prazo definido.",
+          "acceptance": "Resultados positivos iOS preservados com versão do sistema informada. Android ainda não validado; M1-T03 permanece in_progress. Adiamento registrado sem presumir aprovação ou alterar dependências das tasks seguintes."
+        }
+      ],
       "blockedReason": null
     },
     {

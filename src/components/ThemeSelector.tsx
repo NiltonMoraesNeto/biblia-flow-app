@@ -26,6 +26,7 @@ export function ThemeSelector() {
           return (
             <Pressable
               key={option}
+              testID={`theme-option-${option}`}
               accessibilityRole="radio"
               accessibilityLabel={label}
               accessibilityState={{ checked: selected }}

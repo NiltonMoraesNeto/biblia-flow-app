@@ -52,3 +52,13 @@ Ver ADRs propostos e docs/product/brief.md; decisões de plataforma/licença dep
 - Fonte máxima: conteúdo limitado à largura útil, com quebra de linha e rolagem vertical;
   tema empilhado; em fonte ampliada, barra de abas horizontal rolável com rótulos em uma linha
   e largura intrínseca, revelando a aba selecionada. Não reduzir/capar a ampliação para ocultar cortes.
+
+## Incremento M1-T03 em andamento
+
+- Maestro local como runner externo (ADR-0011), sem atualizar o SDK ou incluir dependência nativa no app.
+- Fluxos para navegação/tema, links inválidos via SO e barra em fonte ampliada configurada no sistema.
+- Roteiro manual de VoiceOver/TalkBack, safe areas, fonte máxima, offline e aprovação visual nas duas plataformas.
+- Por decisão do proprietário (ADR-0012), executar a revisão em aparelhos físicos com Expo Go SDK 57,
+  sem exigir simuladores ou automação iOS; fluxos Maestro ficam opcionais, sem dispensar os critérios nativos.
+- Sintaxe aprovada ou teste com mocks não satisfaz revisão em aparelho. Evidência por cenário e plataforma
+  em docs/engineering/M1-T03-validation.md; AC1–AC3 continuam exigidos para concluir F01/M1.

@@ -2,6 +2,7 @@ node_modules/
 .expo/
 dist/
 coverage/
+artifacts/ui/
 *.tsbuildinfo
 .env*
 !.env.example

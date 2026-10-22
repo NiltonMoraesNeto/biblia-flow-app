@@ -1,0 +1,22 @@
+appId: ${APP_ID}
+name: M1-T03 - Links inválidos entregues pelo sistema
+---
+- openLink: ${APP_URL}/pagina-inexistente?origem=teste-publico
+- extendedWaitUntil:
+    visible: Não encontramos esta página
+    timeout: 60000
+- assertNotVisible: teste-publico
+- tapOn:
+    id: navigation-recover
+- assertVisible: Um momento de fé no seu dia.
+- openLink: ${APP_URL}/biblia/inexistente
+- assertVisible: Não encontramos esta página
+- tapOn:
+    id: navigation-recover
+- assertVisible: Um momento de fé no seu dia.
+- openLink: ${APP_URL}/diario/inexistente
+- assertVisible: Não encontramos esta página
+- takeScreenshot: recuperacao
+- tapOn:
+    id: navigation-recover
+- assertVisible: Um momento de fé no seu dia.

@@ -1,0 +1,28 @@
+appId: ${APP_ID}
+name: M1-T03 - Navegação e aparência em fonte padrão
+---
+- openLink: ${APP_URL}/ajustes
+- extendedWaitUntil:
+    visible:
+      id: theme-option-dark
+    timeout: 60000
+- tapOn:
+    id: theme-option-dark
+- tapOn:
+    id: navigation-tab-index
+- assertVisible: Um momento de fé no seu dia.
+- tapOn:
+    id: navigation-tab-biblia
+- assertVisible: Um espaço para a Palavra
+- tapOn:
+    id: navigation-tab-diario
+- assertVisible: Um espaço para suas reflexões
+- tapOn:
+    id: navigation-tab-ajustes
+- assertVisible: Aparência
+- takeScreenshot: ajustes-escuro
+- tapOn:
+    id: theme-option-light
+- takeScreenshot: ajustes-claro
+- tapOn:
+    id: theme-option-system

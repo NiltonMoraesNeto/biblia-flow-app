@@ -98,7 +98,44 @@ Em fonte máxima, deslizar a barra para os lados para alcançar todas as abas.
 Check final aprovado com 22 testes; exports iOS 1121 e Android 1257 módulos aprovados.
 Checklist de revisão conferido. Nenhum commit/push; M1-T02 segue review para reteste físico.
 
-## Critérios e limitações
+## Retomada no novo Mac — 22/10/2026
+
+- HEAD local e HEAD/main do repositório pessoal conferidos por HTTPS:
+  `bf0761abb3fb3db344af715fe94c93e5080eb6ba`. Os 103 arquivos versionados estão
+  presentes; git fsck aprovado e árvore inicialmente limpa, sem diff a preservar.
+  A correção final da barra horizontal está incluída nesse commit.
+- Node 24.12.0 e npm 11.6.2 disponíveis; Node atende .nvmrc e engines (>=24.3.0 <25).
+- npm ci --no-audit --no-fund aprovado: 907 pacotes. Manifesto e lockfile intactos.
+  Expo 57.0.31, React 19.2.3, RN 0.86.3 e Router 57.0.29 confirmados após instalação.
+  expo install --check e Expo Doctor 1.21.5 (21/21 checks) aprovados;
+  SDK 58 não instalado.
+- npm run check aprovado: estrutura, TypeScript strict, lint, formatação,
+  11 testes Node e 11 de integração. Exportações Metro aprovadas:
+  iOS 1121 módulos (2,4 MB) e Android 1257 módulos (2,7 MB).
+- Tentativas restritas de instalação/exportação encontraram limites de rede/cache
+  e escrita em ~/.expo; repetidas com autorização e concluídas. Nenhuma mudança
+  de credenciais globais, conta empresarial ou remote. O alias github.com-pessoal
+  permanece no origin, mas sua autenticação neste Mac não foi validada; a comparação
+  com GitHub usou HTTPS, sem fetch/pull/push.
+- O proprietário respondeu “Retestei e funcionou” à confirmação de que Ajustes
+  aparece inteiro em uma linha em fonte máxima e de que a barra permite acessar
+  as quatro abas. Reteste físico dessa correção aprovado no iPhone.
+  Em seguida, confirmou: “já abri o app todo e consegui mexer nele”, informando
+  iPhone 14; versão do iOS não informada. Uso geral e navegação confirmados nesse
+  aparelho. Não estender esse relato a safe areas, links inválidos via SO, offline
+  ou leitores de tela sem confirmação específica; disponibilidade Android não informada.
+- Este Mac tem Command Line Tools, sem simctl disponível. adb não encontrado.
+  Não executados: teste físico Android, leitores de tela, safe areas e deep links
+  entregues pelo sistema operacional, além do cenário offline do roteiro abaixo.
+  Os testes com mocks e exports não substituem essas verificações.
+
+Revisão pelo checklist .agents/workflows/review.md: task/dependência e diff conferidos;
+somente evidências/status atualizados, sem mudança de implementação ou dependências.
+Nenhum corpus, dado privado, segredo, commit ou push adicionado.
+M1-T02 permanece review pelos cenários pendentes; M1-T03 permanece todo por depender
+de M1-T02 done. Não há aprovação presumida para encerrar M1/F01.
+
+## Critérios após a retomada
 
 F01-AC1: preferência manual mantida ao navegar, coberta por integração. Resposta ao sistema
 tem evidências M1-T01; novos cenários de estado/rolagem em navegação requerem aparelho.
@@ -109,9 +146,23 @@ iOS/Android nesta sessão. Não há simulador iOS configurado nem aparelho Andro
 
 Mudança usa módulos distribuídos no Expo Go SDK 57; não houve prebuild, build nativo,
 assinatura, publicação ou validação de binário. Revisão física completa nas duas plataformas pendente; abertura das abas no iPhone confirmada acima.
-M1-T02 permanece review após checks, sem declarar M1 ou F01 concluídas.
+Na retomada inicial, M1-T02 permaneceu review após checks; aceite final registrado abaixo.
 
-## Roteiro de revisão em iOS e Android — pendente
+## Aceite e encerramento — 22/10/2026
+
+Após ser informado das verificações pendentes, o proprietário autorizou explicitamente:
+“pode concluir a M1-T02”. M1-T02 passa a done com base na implementação, testes das rotas
+reais e recuperação de caminhos inválidos, src/app restrito a rotas/layouts, check com
+22 testes e exports aprovados, além da navegação, tema e fonte máxima confirmados no iPhone 14.
+
+Esse aceite encerra o incremento de navegação. Não declara executados os testes físicos
+de safe areas, links entregues pelo SO, offline, leitores de tela ou Android. O roteiro
+abaixo segue para M1-T03, cuja dependência agora está satisfeita. M1/F01 continuam abertas.
+Mudança somente documental/de estado; exports desta sessão permanecem válidos, sem
+repetição porque código, configuração e dependências não mudaram. Checklist de revisão
+conferido novamente; sem commit/push.
+
+## Roteiro de revisão em iOS e Android — continuar em M1-T03
 
 1. Encerrar o servidor anterior e executar npm start -- --clear --lan; abrir o novo QR.
    No iPhone, Expo CLI e Expo Go precisam estar conectados à mesma conta Expo.

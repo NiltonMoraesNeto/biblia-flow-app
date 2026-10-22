@@ -49,6 +49,7 @@ export default function NavigationTabs() {
           return (
             <Pressable
               key={route.key}
+              testID={`navigation-tab-${route.name}`}
               accessibilityRole="tab"
               accessibilityLabel={title}
               accessibilityState={{ selected }}
@@ -105,6 +106,7 @@ export default function NavigationTabs() {
             {largeText ? (
               <ScrollView
                 ref={scrollRef}
+                testID="navigation-tabs-scroll"
                 horizontal
                 accessibilityLabel={ptBR.navigation.scrollHint}
                 showsHorizontalScrollIndicator

@@ -21,6 +21,7 @@ export default function NotFoundScreen() {
         <AppText>{ptBR.notFound.description}</AppText>
         <Link href="/" replace asChild>
           <Pressable
+            testID="navigation-recover"
             accessibilityRole="link"
             style={StyleSheet.flatten([
               styles.button,

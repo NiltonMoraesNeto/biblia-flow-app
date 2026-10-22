@@ -1,0 +1,36 @@
+appId: ${APP_ID}
+name: M1-T03 - Abas com fonte ampliada previamente no sistema
+tags:
+  - large-text
+---
+- openLink: ${APP_URL}/
+- extendedWaitUntil:
+    visible:
+      id: navigation-tabs-scroll
+    timeout: 60000
+- runFlow:
+    file: ../helpers/select-large-tab.yaml
+    env:
+      TAB_ID: navigation-tab-biblia
+      DIRECTION: LEFT
+- assertVisible: Um espaço para a Palavra
+- runFlow:
+    file: ../helpers/select-large-tab.yaml
+    env:
+      TAB_ID: navigation-tab-diario
+      DIRECTION: LEFT
+- assertVisible: Um espaço para suas reflexões
+- runFlow:
+    file: ../helpers/select-large-tab.yaml
+    env:
+      TAB_ID: navigation-tab-ajustes
+      DIRECTION: LEFT
+- assertVisible: Aparência
+- takeScreenshot: ajustes-fonte-ampliada
+- runFlow:
+    file: ../helpers/select-large-tab.yaml
+    env:
+      TAB_ID: navigation-tab-index
+      DIRECTION: RIGHT
+- assertVisible: Um momento de fé no seu dia.
+- takeScreenshot: hoje-fonte-ampliada
