@@ -1,7 +1,8 @@
 # BibliaFlow
 
 Base de engenharia para aplicativo bíblico minimalista em React Native + Expo + TypeScript, iOS/Android.
-M0 e M1-T01 concluídas (base, temas e tokens). Funcionalidades de domínio permanecem planejadas.
+M0 e M1-T01 concluídas (base, temas e tokens). M1-T02 implementada para revisão de navegação.
+Funcionalidades de domínio permanecem planejadas.
 
 ## Começar
 
@@ -34,6 +35,8 @@ Para revisar no Expo Go compatível com SDK 57, encerrar o servidor anterior e e
 Direção 2 minimalista, paleta aprovada, tema por sistema e textos pt-BR centralizados.
 ARC é preferência pendente de licença; nenhum corpus incluído. Diário, notificações, automático,
 widgets e sincronização constam nas specs e tasks. Nenhum backend ou conta EAS configurado. Origin vinculado ao [repositório pessoal](https://github.com/NiltonMoraesNeto/biblia-flow-app); sem push nesta entrega.
-M1-T01 aprovada pelo proprietário: [evidências e limites](docs/engineering/M1-T01-validation.md). Próxima task: M1-T02 (navegação).
+M1-T01 aprovada pelo proprietário: [evidências e limites](docs/engineering/M1-T01-validation.md).
+M1-T02: abas Hoje/Bíblia/Diário/Ajustes e tema em Ajustes; seguir o [roteiro de revisão](docs/engineering/M1-T02-validation.md).
+Leitura e escrita do diário permanecem indisponíveis. Após encerrar a revisão, seguir M1-T03.
 Decisões do produto pendentes estão em M2 e licenciamento em M3.
 Mockup original não recuperado; validar telas com o proprietário em M1.

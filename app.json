@@ -11,6 +11,6 @@
     },
     "android": {},
     "scheme": "bibliaflow",
-    "plugins": ["expo-status-bar"]
+    "plugins": ["expo-status-bar", "expo-router", "expo-font"]
   }
 }

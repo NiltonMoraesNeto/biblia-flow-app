@@ -108,14 +108,51 @@
       "id": "M1-T02",
       "milestone": "M1",
       "title": "Expo Router e navegação",
-      "status": "todo",
-      "owner": null,
+      "status": "review",
+      "owner": "Codex (projeto local)",
       "dependsOn": ["M1-T01"],
       "specs": ["specs/features/F01-design-navigation.md"],
       "acceptance": [
         "Rotas Hoje/Bíblia/Diário/Ajustes e deep link inválido testados; src/app só contém rotas."
       ],
-      "evidence": [],
+      "evidence": [
+        {
+          "date": "2026-10-21",
+          "reference": "docs/engineering/M1-T02-validation.md",
+          "result": "Check aprovado: 11 testes Node + 8 de integração com rotas reais; Expo Doctor 21/21; exports Metro iOS 1121 e Android 1257 módulos. Revisão física iOS/Android pendente.",
+          "acceptance": "Rotas, abas, preservação de tema e recuperação de links inválidos exercitadas; src/app somente com rotas/layouts. Safe areas e deep links via SO ainda requerem aparelho."
+        },
+        {
+          "date": "2026-10-21",
+          "reference": "docs/engineering/M1-T02-validation.md",
+          "result": "Proprietário confirmou no iPhone: abriu corretamente as quatro abas. Modelo/iOS não informados; não inferir aprovação dos demais cenários.",
+          "acceptance": "Abertura das quatro abas confirmada em aparelho; tema entre rotas, links inválidos, áreas seguras e Android seguem pendentes de revisão manual."
+        },
+        {
+          "date": "2026-10-21",
+          "reference": "docs/engineering/M1-T02-validation.md",
+          "result": "Proprietário confirmou tema entre abas; fonte máxima corta todos os textos, sem acesso ao excedente lateral. Falha de acessibilidade registrada, correção em execução.",
+          "acceptance": "F01-AC1 tema entre abas confirmado; F01-AC2 falhou em fonte máxima. Aceite de acessibilidade não concedido."
+        },
+        {
+          "date": "2026-10-21",
+          "reference": "docs/engineering/M1-T02-validation.md",
+          "result": "Ajuste responsivo implementado: largura útil explícita, texto sem teto de escala, controles reorganizados. Check aprovado com 22 testes; exports iOS 1121 e Android 1257 módulos aprovados. Reteste físico de fonte máxima pendente.",
+          "acceptance": "Correção proposta para falha F01-AC2; testes verificam contrato de largura em escala 3,5, sem certificar renderização de glifos no aparelho."
+        },
+        {
+          "date": "2026-10-21",
+          "reference": "docs/engineering/M1-T02-validation.md",
+          "result": "Proprietário aprovou correção dos textos em fonte máxima; Ajustes ainda quebrou o s em outra linha. Barra ajustada para expandir rótulos que quebram; reteste físico pendente.",
+          "acceptance": "Correção F01-AC2 em revisão: ampliação preservada e linha exclusiva para rótulos medidos como multilinha."
+        },
+        {
+          "date": "2026-10-21",
+          "reference": "docs/engineering/M1-T02-validation.md",
+          "result": "Proprietário confirmou quebra persistente no botão inferior Ajustes. Estratégia substituída por barra horizontal rolável em fonte ampliada e botões de largura intrínseca. Reteste físico pendente.",
+          "acceptance": "F01-AC2 em revisão; títulos mantidos, nomes de abas em uma linha sem reduzir a escala."
+        }
+      ],
       "blockedReason": null
     },
     {

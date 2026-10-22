@@ -17,5 +17,5 @@ Depois leia a spec da feature, a milestone e as regras em .agents/rules/engineer
 - Commits/PRs referenciam task (ex.: feat(M1-T01): ...). Não marque done sem evidência verificável.
 - Faça revisão pelo checklist .agents/workflows/review.md antes da entrega.
 
-Ponto de entrada atual: App.tsx → src/app/BootstrapScreen.tsx. Expo Router será introduzido em M1-T02;
-ao fazê-lo, mover BootstrapScreen para features e reservar src/app somente para rotas.
+Ponto de entrada atual: expo-router/entry → src/app/_layout.tsx. src/app contém somente rotas e layouts;
+BootstrapScreen está em src/features/today. Provedor de tema permanece no layout raiz durante a navegação.

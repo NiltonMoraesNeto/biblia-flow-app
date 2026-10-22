@@ -42,7 +42,12 @@ export const typography = {
   caption: { fontSize: 14, lineHeight: 22, fontWeight: '400' },
   control: { fontSize: 16, lineHeight: 24, fontWeight: '600' },
 } as const;
-export const layout = { contentMaxWidth: 560, touchTarget: 48 } as const;
+export const layout = {
+  contentMaxWidth: 560,
+  touchTarget: 48,
+  largeTextScale: 1.5,
+  tabBasis: 64,
+} as const;
 export type ThemeName = keyof typeof themes;
 export type ThemePreference = 'system' | ThemeName;
 export type Theme = (typeof themes)[ThemeName];

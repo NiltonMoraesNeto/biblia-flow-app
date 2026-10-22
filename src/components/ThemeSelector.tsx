@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { ptBR } from '../i18n/pt-BR';
 import { layout, radii, spacing } from '../theme/tokens';
 import type { ThemePreference } from '../theme/tokens';
@@ -9,6 +9,8 @@ const preferences: readonly ThemePreference[] = ['system', 'light', 'dark'];
 
 export function ThemeSelector() {
   const { theme, preference, setPreference } = useTheme();
+  const { fontScale } = useWindowDimensions();
+  const largeText = fontScale >= layout.largeTextScale;
   return (
     <View style={styles.section}>
       <AppText variant="heading" accessibilityRole="header">
@@ -17,7 +19,7 @@ export function ThemeSelector() {
       <AppText variant="caption" tone="textMuted">
         {ptBR.appearance.description}
       </AppText>
-      <View style={styles.options}>
+      <View style={[styles.options, largeText && styles.stacked]}>
         {preferences.map((option) => {
           const selected = option === preference;
           const label = ptBR.appearance.options[option];
@@ -30,6 +32,7 @@ export function ThemeSelector() {
               onPress={() => setPreference(option)}
               style={({ pressed }) => [
                 styles.option,
+                largeText && styles.fullWidth,
                 {
                   backgroundColor: selected
                     ? theme.primary
@@ -70,5 +73,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  label: { textAlign: 'center', flexShrink: 1 },
+  stacked: { flexDirection: 'column' },
+  fullWidth: { width: '100%', flexBasis: 'auto', flexGrow: 0 },
+  label: { textAlign: 'center' },
 });

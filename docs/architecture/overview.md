@@ -3,8 +3,11 @@
 React Native + Expo + TypeScript strict. Base proveniente do template oficial blank-typescript,
 SDK 57 conforme [ADR-0009](../adr/0009.md); versões exatas resolvidas pelo lockfile. Node 24 LTS para desenvolvimento e CI.
 
-App.tsx → src/app/BootstrapScreen.tsx → theme/i18n. Sem domínio simulado no bootstrap.
-M1-T02 introduz Expo Router; src/app passa a conter somente rotas e layouts.
+expo-router/entry → src/app/_layout.tsx → grupo (tabs) e recuperação +not-found.
+src/app contém somente rotas e layouts; telas em src/features e Screen compartilhado em src/components.
+BootstrapScreen fica em features/today. ThemeProvider no layout raiz preserva preferência na sessão.
+As rotas /, /biblia, /diario e /ajustes usam abas JavaScript e safe areas explícitas (ADR-0010).
+Não há domínio simulado: leitura e escrita do diário seguem indisponíveis até suas milestones.
 Features possuem componentes, casos de uso e contratos. Services implementam interfaces de
 armazenamento, relógio, notificações e catálogo. Components/hooks compartilhados só quando necessários.
 

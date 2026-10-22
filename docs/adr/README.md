@@ -12,3 +12,4 @@ Não editar a história de uma decisão aceita para ocultar mudança; criar suce
 - [ADR-0007 — Backend e sincronização](0007.md): proposed
 - [ADR-0008 — Design minimalista e navegação](0008.md): accepted
 - [ADR-0009 — SDK 57 para revisão com Expo Go](0009.md): accepted
+- [ADR-0010 — Rotas e testes de navegação M1-T02](0010.md): accepted

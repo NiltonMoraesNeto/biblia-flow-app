@@ -39,3 +39,16 @@ Ver ADRs propostos e docs/product/brief.md; decisões de plataforma/licença dep
 - Contraste: texto normal ≥4,5:1; controles/bordas ≥3:1. Ver tabela em docs/design-system/README.md.
 - Acessibilidade nativa, safe areas e navegação exigem os roteiros M1-T02/T03; esta entrega não as comprova.
 - Revisão de escopo realizada em 21/10/2026 com base no pedido de continuidade; não significa aprovação visual.
+
+## Incremento M1-T02
+
+- Rotas / (Hoje), /biblia, /diario, /ajustes; abas visíveis com rótulos pt-BR e estado selecionado acessível.
+- Preferência de tema disponível em Ajustes e preservada ao percorrer abas durante a sessão.
+- Conteúdo de Hoje mantém o convite à pausa; Bíblia/Diário informam indisponibilidade, sem corpus ou escrita.
+- Caminho inexistente, inclusive sob /biblia ou /diario, mostra recuperação para Hoje sem reproduzir parâmetros.
+- src/app contém somente layouts e rotas; implementação de telas permanece em features.
+- Safe areas implementadas para conteúdo e barra; validação física iOS/Android permanece obrigatória,
+  sem confundir mocks dos testes de navegação com teste de acessibilidade/aparelho.
+- Fonte máxima: conteúdo limitado à largura útil, com quebra de linha e rolagem vertical;
+  tema empilhado; em fonte ampliada, barra de abas horizontal rolável com rótulos em uma linha
+  e largura intrínseca, revelando a aba selecionada. Não reduzir/capar a ampliação para ocultar cortes.
